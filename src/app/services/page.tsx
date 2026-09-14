@@ -32,7 +32,7 @@ export default function ServicesPage() {
         {SERVICES.map((s, i) => (
           <Reveal key={s.slug}>
             <div className={`card-lift grid overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#111111] md:grid-cols-2 ${i % 2 ? "md:[&>*:first-child]:order-2" : ""}`}>
-              <div className="relative min-h-72 md:min-h-[420px]">
+              <div className="relative h-80 md:h-[420px]">
                 <PhotoSlider images={s.images} alt={s.title} className="absolute inset-0" eager={i < 2} />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 to-transparent md:bg-gradient-to-r md:from-transparent md:to-[#111111]/40" />
               </div>

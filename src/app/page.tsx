@@ -32,8 +32,8 @@ export default function HomePage() {
       {/* HERO */}
       <section className="hero-vignette relative flex min-h-[108vh] items-center justify-center overflow-hidden">
         <Image
-          src={IMG.heroSUV}
-          alt="Luxury black SUV on Golden Temple road at night"
+          src="/places/golden-night.jpg"
+          alt="Golden Temple Amritsar at night"
           fill
           priority
           className="object-cover"
@@ -101,7 +101,7 @@ export default function HomePage() {
       <section className="mx-auto max-w-7xl px-5 pt-14 md:px-8">
         <Reveal>
           <div className="card-lift grid overflow-hidden rounded-[2rem] border border-[#d4af37]/40 bg-gradient-to-br from-[#171204] via-[#0d0d0d] to-black md:grid-cols-2">
-            <div className="relative min-h-72 md:min-h-[420px]">
+            <div className="relative h-80 md:h-[420px]">
               <PhotoSlider images={["/fleet/customer-ertiga.jpg"]} alt="MSL's new Maruti Ertiga" className="absolute inset-0" eager />
               <span className="absolute left-5 top-5 z-10 rounded-full bg-gradient-to-r from-[#f3dd8f] to-[#d4af37] px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.25em] text-black">
                 New Arrival
