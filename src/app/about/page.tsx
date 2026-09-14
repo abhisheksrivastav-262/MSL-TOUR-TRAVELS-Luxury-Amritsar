@@ -84,6 +84,34 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-[#080808] py-16">
+        <div className="mx-auto max-w-7xl px-5 md:px-8">
+          <SectionHeading eyebrow="The face behind the wheel" title="Your Captain, On Every Trip" desc="Verified, trained and hospitality-obsessed — the man who makes 4 AM airport pickups feel effortless." />
+          <Reveal>
+            <div className="card-lift mx-auto grid max-w-4xl overflow-hidden rounded-[2rem] border border-[#d4af37]/30 bg-[#111111] md:grid-cols-[320px_1fr]">
+              <div className="relative h-80 md:h-auto">
+                <Image src="/team/chauffeur.jpg" alt="MSL verified chauffeur" fill className="object-cover object-top" />
+              </div>
+              <div className="flex flex-col justify-center p-8 md:p-10">
+                <div className="flex items-center gap-2 text-[#d4af37]">
+                  <ShieldCheck size={18} />
+                  <span className="text-[11px] font-bold uppercase tracking-[0.3em]">100% Police-Verified</span>
+                </div>
+                <h3 className="font-display mt-3 text-3xl">Lead Chauffeur — MSL Tour and Travels</h3>
+                <p className="mt-3 leading-relaxed text-[#BDBDBD]">
+                  Sultanwind&apos;s own — knows every gurdwara gate, shortcut and dhaba on the
+                  Amritsar circuit. Hindi, Punjabi and English speaking, GPS-tracked on every trip,
+                  and rated 4.9★ by thousands of happy guests.
+                </p>
+                <Link href="/book" className="gold-btn mt-6 inline-flex w-fit items-center gap-2 rounded-full px-7 py-3 text-xs font-bold uppercase tracking-[0.2em]">
+                  Ride With Us <ArrowRight size={14} />
+                </Link>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="bg-[#080808] py-16">
         <div className="mx-auto grid max-w-7xl gap-5 px-5 md:grid-cols-2 md:px-8">
           <Reveal>
             <div className="h-full rounded-3xl border border-[#d4af37]/30 bg-gradient-to-br from-[#171204] to-black p-8">

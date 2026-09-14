@@ -96,6 +96,41 @@ export default function HomePage() {
         <BookingWidget />
       </div>
 
+      {/* NEW ARRIVAL — customer's own car, first vehicle image on site */}
+      <section className="mx-auto max-w-7xl px-5 pt-14 md:px-8">
+        <Reveal>
+          <div className="card-lift grid overflow-hidden rounded-[2rem] border border-[#d4af37]/40 bg-gradient-to-br from-[#171204] via-[#0d0d0d] to-black md:grid-cols-2">
+            <div className="relative h-72 md:h-[420px]">
+              <Image src="/fleet/customer-ertiga.jpg" alt="MSL's new Maruti Ertiga" fill className="object-cover" priority />
+              <span className="absolute left-5 top-5 rounded-full bg-gradient-to-r from-[#f3dd8f] to-[#d4af37] px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.25em] text-black">
+                New Arrival
+              </span>
+            </div>
+            <div className="flex flex-col justify-center p-8 md:p-12">
+              <p className="text-[11px] uppercase tracking-[0.45em] text-[#d4af37]">Fresh in the fleet</p>
+              <h2 className="font-display mt-3 text-3xl md:text-5xl leading-tight">
+                Meet Our New <span className="gold-text">Maruti Ertiga</span>
+              </h2>
+              <p className="mt-4 leading-relaxed text-[#BDBDBD]">
+                6-seater family comfort with alloys, chilled AC and music — perfect for
+                Golden Temple tours, airport runs and outstation trips at just ₹14/km.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2 text-xs text-white/70">
+                <span className="rounded-full bg-white/5 px-3.5 py-2">6 Passengers</span>
+                <span className="rounded-full bg-white/5 px-3.5 py-2">2 Bags</span>
+                <span className="rounded-full bg-white/5 px-3.5 py-2">AC + Music</span>
+                <span className="rounded-full bg-white/5 px-3.5 py-2">Sanitized</span>
+              </div>
+              <div className="mt-7">
+                <Link href="/book?vehicle=Maruti%20Ertiga" className="gold-btn inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-bold uppercase tracking-[0.15em]">
+                  Book This Ertiga <ArrowRight size={16} />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
       {/* STATS */}
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8">
         <div className="grid grid-cols-2 gap-4 md:grid-cols-4">

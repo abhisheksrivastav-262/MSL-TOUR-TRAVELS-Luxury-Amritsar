@@ -7,7 +7,7 @@ import { X } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import { GALLERY } from "@/lib/data";
 
-const CATS = ["All", "Luxury Cars", "Golden Temple", "Wagah Border", "Airport", "Weddings", "Group Tours", "Highways"];
+const CATS = ["All", "Our Fleet", "Luxury Cars", "Golden Temple", "Wagah Border", "Airport", "Weddings", "Group Tours", "Highways"];
 
 export default function GalleryPage() {
   const [cat, setCat] = useState("All");

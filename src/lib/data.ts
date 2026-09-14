@@ -39,7 +39,7 @@ export type Fleet = {
   slug: string;
   name: string;
   category: string;
-  image: string;
+  images: string[]; // first = cover; slides in order (own photos, old kept last)
   passengers: number;
   luggage: number;
   fuel: string;
@@ -48,17 +48,18 @@ export type Fleet = {
 };
 
 export const FLEET: Fleet[] = [
-  // Real model photos — Wikimedia Commons (CC licensed, see credits on Fleet page)
-  { slug: "swift-dzire", name: "Swift Dzire", category: "Sedan", image: "/fleet/dzire.jpg", passengers: 4, luggage: 2, fuel: "Diesel / CNG", price: "₹11/km", tag: "Most Booked" },
-  { slug: "toyota-etios", name: "Toyota Etios", category: "Sedan", image: "/fleet/etios.jpg", passengers: 4, luggage: 2, fuel: "Diesel", price: "₹11/km" },
-  { slug: "maruti-ertiga", name: "Maruti Ertiga", category: "MUV", image: "/fleet/ertiga.jpg", passengers: 6, luggage: 2, fuel: "CNG / Petrol", price: "₹14/km" },
-  { slug: "innova-crysta", name: "Toyota Innova Crysta", category: "Premium MUV", image: "/fleet/innova.jpg", passengers: 7, luggage: 3, fuel: "Diesel", price: "₹19/km", tag: "Best Value" },
-  { slug: "kia-carens", name: "Kia Carens", category: "MUV", image: "/fleet/carens.jpg", passengers: 6, luggage: 2, fuel: "Diesel", price: "₹16/km" },
-  { slug: "toyota-fortuner", name: "Toyota Fortuner", category: "Luxury SUV", image: "/fleet/fortuner.jpg", passengers: 7, luggage: 3, fuel: "Diesel", price: "₹32/km", tag: "Flagship SUV" },
-  { slug: "mercedes-e-class", name: "Mercedes E-Class", category: "Luxury", image: "/fleet/mercedes.jpg", passengers: 4, luggage: 2, fuel: "Petrol", price: "₹85/km", tag: "Chauffeur Elite" },
-  { slug: "bmw-5-series", name: "BMW 5 Series", category: "Luxury", image: "/fleet/bmw.jpg", passengers: 4, luggage: 2, fuel: "Petrol", price: "₹85/km" },
-  { slug: "tempo-12", name: "Tempo Traveller 12 Seater", category: "Group", image: "/fleet/tempo12.jpg", passengers: 12, luggage: 12, fuel: "Diesel", price: "₹24/km" },
-  { slug: "tempo-17", name: "Tempo Traveller 17 Seater", category: "Group", image: "/fleet/tempo17.jpg", passengers: 17, luggage: 17, fuel: "Diesel", price: "₹28/km", tag: "Group Choice" },
+  // Customer's own new car — shown first across the site
+  { slug: "maruti-ertiga", name: "Maruti Ertiga", category: "MUV", images: ["/fleet/customer-ertiga.jpg", "/fleet/ertiga-1.jpg", "/fleet/ertiga-2.jpg", "/fleet/ertiga-3.jpg", "/fleet/ertiga.jpg"], passengers: 6, luggage: 2, fuel: "CNG / Petrol", price: "₹14/km", tag: "New Arrival" },
+  { slug: "swift-dzire", name: "Swift Dzire", category: "Sedan", images: ["/fleet/dzire-1.jpg", "/fleet/dzire-2.jpg", "/fleet/dzire-3.jpg", "/fleet/dzire-4.jpg", "/fleet/dzire.jpg"], passengers: 4, luggage: 2, fuel: "Diesel / CNG", price: "₹11/km", tag: "Most Booked" },
+  { slug: "toyota-etios", name: "Toyota Etios", category: "Sedan", images: ["/fleet/etios-1.jpg", "/fleet/etios.jpg"], passengers: 4, luggage: 2, fuel: "Diesel", price: "₹11/km" },
+  { slug: "honda-amaze", name: "Honda Amaze", category: "Sedan", images: ["/fleet/amaze-1.jpg", "/fleet/amaze-2.jpg", "/fleet/amaze-3.jpg"], passengers: 4, luggage: 2, fuel: "Petrol / Diesel", price: "₹11/km", tag: "New in Fleet" },
+  { slug: "innova-crysta", name: "Toyota Innova Crysta", category: "Premium MUV", images: ["/fleet/innova-1.jpg", "/fleet/innova-2.jpg", "/fleet/innova-3.jpg", "/fleet/innova-4.jpg", "/fleet/innova-5.jpg", "/fleet/innova-6.jpg", "/fleet/innova-7.jpg", "/fleet/innova-8.jpg", "/fleet/innova-9.jpg", "/fleet/innova-10.jpg", "/fleet/innova-11.jpg", "/fleet/innova-12.jpg", "/fleet/innova-13.jpg", "/fleet/innova-14.jpg", "/fleet/innova.jpg"], passengers: 7, luggage: 3, fuel: "Diesel", price: "₹19/km", tag: "Best Value" },
+  { slug: "kia-carens", name: "Kia Carens", category: "MUV", images: ["/fleet/carens.jpg"], passengers: 6, luggage: 2, fuel: "Diesel", price: "₹16/km" },
+  { slug: "toyota-fortuner", name: "Toyota Fortuner", category: "Luxury SUV", images: ["/fleet/fortuner.jpg"], passengers: 7, luggage: 3, fuel: "Diesel", price: "₹32/km", tag: "Flagship SUV" },
+  { slug: "mercedes-e-class", name: "Mercedes E-Class", category: "Luxury", images: ["/fleet/mercedes.jpg"], passengers: 4, luggage: 2, fuel: "Petrol", price: "₹85/km", tag: "Chauffeur Elite" },
+  { slug: "bmw-5-series", name: "BMW 5 Series", category: "Luxury", images: ["/fleet/bmw.jpg"], passengers: 4, luggage: 2, fuel: "Petrol", price: "₹85/km" },
+  { slug: "tempo-12", name: "Tempo Traveller 12 Seater", category: "Group", images: ["/fleet/tempo12-1.jpg", "/fleet/tempo12-2.jpg", "/fleet/tempo12-3.jpg", "/fleet/tempo12-4.jpg", "/fleet/tempo12.jpg"], passengers: 12, luggage: 12, fuel: "Diesel", price: "₹24/km" },
+  { slug: "tempo-17", name: "Tempo Traveller 17 Seater", category: "Group", images: ["/fleet/tempo17-1.jpg", "/fleet/tempo17-2.jpg", "/fleet/tempo17-3.jpg", "/fleet/tempo17-4.jpg", "/fleet/tempo17-5.jpg", "/fleet/tempo17.jpg"], passengers: 17, luggage: 17, fuel: "Diesel", price: "₹28/km", tag: "Group Choice" },
 ];
 
 export type Service = {
@@ -121,6 +122,18 @@ export const FAQS = [
 ];
 
 export const GALLERY = [
+  { src: "/fleet/customer-ertiga.jpg", cat: "Our Fleet", label: "Our New Ertiga" },
+  { src: "/gallery/tourist-coach.jpg", cat: "Group Tours", label: "Tourist Coach" },
+  { src: "/gallery/wedding-decor.jpg", cat: "Weddings", label: "Wedding Decor Car" },
+  { src: "/gallery/sedan-duty-1.jpg", cat: "Our Fleet", label: "Sedan on Duty" },
+  { src: "/gallery/sedan-duty-2.jpg", cat: "Our Fleet", label: "Sedan on Duty" },
+  { src: "/gallery/fleet-van.jpg", cat: "Our Fleet", label: "Family Van" },
+  { src: "/gallery/fleet-suv-1.jpg", cat: "Our Fleet", label: "SUV on Duty" },
+  { src: "/gallery/fleet-suv-2.jpg", cat: "Our Fleet", label: "SUV on Duty" },
+  { src: "/gallery/fleet-hatch.jpg", cat: "Our Fleet", label: "Compact on Duty" },
+  { src: "/gallery/fleet-sedan-black.jpg", cat: "Our Fleet", label: "Premium Sedan" },
+  { src: "/gallery/fleet-sedan-1.jpg", cat: "Our Fleet", label: "Sedan on Duty" },
+  { src: "/gallery/fleet-cabin.jpg", cat: "Our Fleet", label: "Comfort Cabin" },
   { src: IMG.heroSUV, cat: "Luxury Cars", label: "Fortuner Night Patrol" },
   { src: IMG.rollsRoyce, cat: "Luxury Cars", label: "Rolls Royce Class" },
   { src: IMG.mercedes, cat: "Luxury Cars", label: "Mercedes E-Class" },
