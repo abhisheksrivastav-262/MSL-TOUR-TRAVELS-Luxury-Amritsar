@@ -16,7 +16,7 @@ export default function ContactPage() {
             {[
               { icon: <MapPin size={20} />, t: BUSINESS.name, d: BUSINESS.address },
               { icon: <Clock3 size={20} />, t: "Business Hours", d: "Open 24×7 — including holidays" },
-              { icon: <Phone size={20} />, t: BUSINESS.phoneDisplay, d: "Tap to call our dispatcher", href: "tel:+919999999999" },
+              { icon: <Phone size={20} />, t: BUSINESS.phoneDisplay, d: "Tap to call our dispatcher", href: "tel:+918427822232" },
               { icon: <Mail size={20} />, t: BUSINESS.email, d: "For invoices & corporate tie-ups", href: `mailto:${BUSINESS.email}` },
             ].map((c, i) => (
               <Reveal key={c.t} delay={i * 0.07}>
@@ -33,7 +33,7 @@ export default function ContactPage() {
               <a href={quickWhatsApp("Hi MSL! I have an inquiry.")} target="_blank" className="flex items-center justify-center gap-2 rounded-2xl bg-[#25D366] px-4 py-4 text-sm font-bold text-white">
                 <MessageCircle size={18} /> WhatsApp
               </a>
-              <a href="tel:+919999999999" className="gold-btn flex items-center justify-center gap-2 rounded-2xl px-4 py-4 text-sm font-bold">
+              <a href="tel:+918427822232" className="gold-btn flex items-center justify-center gap-2 rounded-2xl px-4 py-4 text-sm font-bold">
                 <Phone size={18} /> Call Now
               </a>
             </div>

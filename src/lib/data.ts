@@ -1,4 +1,4 @@
-export const WHATSAPP_NUMBER = "919999999999";
+export const WHATSAPP_NUMBER = "918427822232";
 
 export const BUSINESS = {
   name: "MSL TOUR AND TRAVELS",
@@ -6,7 +6,7 @@ export const BUSINESS = {
   city: "Amritsar",
   address: "Sultanwind, Amritsar, Punjab, India",
   hours: "24×7",
-  phoneDisplay: "+91 99999 99999",
+  phoneDisplay: "+91 84278 22232",
   email: "book@msltourandtravels.in",
 };
 
