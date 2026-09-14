@@ -132,6 +132,38 @@ export default function HomePage() {
         </Reveal>
       </section>
 
+      {/* FOUNDER — right below Ertiga */}
+      <section className="mx-auto max-w-7xl px-5 pt-6 md:px-8">
+        <Reveal>
+          <div className="glass grid items-center gap-6 overflow-hidden rounded-[2rem] p-6 md:grid-cols-[240px_1fr] md:p-8">
+            <div className="relative mx-auto h-72 w-56 overflow-hidden rounded-2xl border border-[#d4af37]/40 bg-black md:mx-0">
+              <Image src="/team/chauffeur.jpg" alt="Founder of MSL Tour and Travels" fill className="object-cover object-top" />
+              <span className="absolute bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-gradient-to-r from-[#f3dd8f] to-[#d4af37] px-4 py-1 text-[10px] font-bold uppercase tracking-[0.25em] text-black">
+                Founder
+              </span>
+            </div>
+            <div className="text-center md:text-left">
+              <p className="text-[11px] uppercase tracking-[0.45em] text-[#d4af37]">Meet the founder</p>
+              <h2 className="font-display mt-2 text-3xl md:text-4xl">
+                Founder of <span className="gold-text">MSL Tour and Travels</span>
+              </h2>
+              <p className="mx-auto mt-3 max-w-xl leading-relaxed text-[#BDBDBD] md:mx-0">
+                Sultanwind, Amritsar se — khud steering par baithkar company khadi ki.
+                Har trip par personally zimmedari: sahi time, saaf gaadi, imandar kiraya.
+              </p>
+              <div className="mt-5 flex flex-wrap justify-center gap-3 md:justify-start">
+                <a href={quickWhatsApp("Hi! I want to talk to MSL about a booking.")} target="_blank" className="gold-btn inline-flex items-center gap-2 rounded-full px-6 py-2.5 text-xs font-bold uppercase tracking-[0.15em]">
+                  WhatsApp <ArrowRight size={14} />
+                </a>
+                <Link href="/about" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-2.5 text-xs font-bold uppercase tracking-[0.15em] text-white/80 hover:border-[#d4af37] hover:text-[#f3dd8f]">
+                  Our Story
+                </Link>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
       {/* STATS */}
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8">
         <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
