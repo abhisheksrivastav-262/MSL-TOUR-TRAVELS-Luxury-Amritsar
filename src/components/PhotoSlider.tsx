@@ -36,7 +36,7 @@ export default function PhotoSlider({
 
   return (
     <div
-      className={`group/slider relative overflow-hidden ${className}`}
+      className={`group/slider overflow-hidden ${className}`}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >

@@ -17,7 +17,7 @@ export default function FleetCard({ car, index = 0 }: { car: Fleet; index?: numb
       className="card-lift group overflow-hidden rounded-3xl border border-white/10 bg-[#111111]"
     >
       <div className="relative">
-        <PhotoSlider images={car.images} alt={car.name} className="h-64" eager={index < 3} />
+        <PhotoSlider images={car.images} alt={car.name} className="relative h-64" eager={index < 3} />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#050505]/70 via-transparent to-transparent" />
         {car.tag && (
           <span className="absolute left-4 top-4 z-10 rounded-full bg-gradient-to-r from-[#f3dd8f] to-[#d4af37] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-black">

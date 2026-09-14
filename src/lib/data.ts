@@ -12,6 +12,12 @@ export const BUSINESS = {
   address: "Sultanwind, Amritsar, Punjab, India",
   hours: "24×7",
   phoneDisplay: "+91 84278 22232",
+  phones: [
+    { display: "+91 84278 22232", link: "tel:+918427822232", primary: true },
+    { display: "+91 94645 58664", link: "tel:+919464558664" },
+    { display: "+91 62842 67147", link: "tel:+916284267147" },
+    { display: "+91 98553 13282", link: "tel:+919855313282" },
+  ],
   email: "book@msltourandtravels.in",
 };
 

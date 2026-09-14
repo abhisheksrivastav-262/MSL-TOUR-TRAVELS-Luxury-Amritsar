@@ -68,6 +68,11 @@ export default function Footer() {
             <span className="flex gap-2"><MapPin size={16} className="text-[#d4af37]" /> {BUSINESS.address}</span>
             <span className="flex gap-2"><Clock size={16} className="text-[#d4af37]" /> Open {BUSINESS.hours}</span>
             <a href={quickWhatsApp("Hi MSL! I want to book a cab.")} target="_blank" className="flex gap-2 hover:text-[#d4af37]"><Phone size={16} className="text-[#d4af37]" /> {BUSINESS.phoneDisplay}</a>
+            <div className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-white/60">
+              {BUSINESS.phones.slice(1).map((p) => (
+                <a key={p.link} href={p.link} className="hover:text-[#d4af37]">{p.display}</a>
+              ))}
+            </div>
             <span className="flex gap-2"><Mail size={16} className="text-[#d4af37]" /> {BUSINESS.email}</span>
             <Link href="/book" className="gold-btn mt-2 rounded-full px-5 py-2.5 text-center text-xs font-bold uppercase tracking-[0.2em]">
               Book on WhatsApp

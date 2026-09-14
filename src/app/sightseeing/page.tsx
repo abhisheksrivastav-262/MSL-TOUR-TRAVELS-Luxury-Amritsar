@@ -27,7 +27,7 @@ export default function SightseeingPage() {
             <Reveal key={d.name} delay={(i % 2) * 0.1}>
               <div className="card-lift group overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#111111]">
                 <div className="relative">
-                  <PhotoSlider images={[d.image]} alt={d.name} className="h-72" eager={i < 2} />
+                  <PhotoSlider images={[d.image]} alt={d.name} className="relative h-72" eager={i < 2} />
                   <h3 className="font-display pointer-events-none absolute bottom-4 left-6 z-10 text-3xl drop-shadow">{d.name}</h3>
                 </div>
                 <div className="p-6">

@@ -29,13 +29,22 @@ export default function ContactPage() {
                 </div>
               </Reveal>
             ))}
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid gap-4">
               <a href={quickWhatsApp("Hi MSL! I have an inquiry.")} target="_blank" className="flex items-center justify-center gap-2 rounded-2xl bg-[#25D366] px-4 py-4 text-sm font-bold text-white">
-                <MessageCircle size={18} /> WhatsApp
+                <MessageCircle size={18} /> WhatsApp — {BUSINESS.phoneDisplay}
               </a>
-              <a href="tel:+918427822232" className="gold-btn flex items-center justify-center gap-2 rounded-2xl px-4 py-4 text-sm font-bold">
-                <Phone size={18} /> Call Now
-              </a>
+              <div className="rounded-2xl border border-[#d4af37]/30 bg-[#111111] p-5">
+                <div className="mb-3 text-[11px] font-bold uppercase tracking-[0.3em] text-[#d4af37]">
+                  Call us — 24×7 (tap to call)
+                </div>
+                <div className="grid gap-2.5 sm:grid-cols-2">
+                  {BUSINESS.phones.map((p) => (
+                    <a key={p.link} href={p.link} className={`flex items-center justify-center gap-2 rounded-xl px-4 py-3.5 text-sm font-bold ${p.primary ? "gold-btn" : "border border-white/15 text-white hover:border-[#d4af37]/60 hover:text-[#f3dd8f]"}`}>
+                      <Phone size={16} /> {p.display}
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
 
