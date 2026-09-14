@@ -41,7 +41,7 @@ export default function GalleryPage() {
               className="group relative cursor-zoom-in overflow-hidden rounded-2xl border border-white/10"
               onClick={() => setLight(i)}
             >
-              <Image src={g.src} alt={g.label} width={800} height={600} className="w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <Image src={g.src} alt={g.label} width={g.w ?? 800} height={g.h ?? 600} className="h-auto w-full transition-transform duration-700 group-hover:scale-[1.03]" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
               <div className="absolute bottom-3 left-3 right-3 translate-y-3 opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
                 <div className="text-sm font-bold">{g.label}</div>

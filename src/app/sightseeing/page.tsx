@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { MapPin, Wallet, Clock3, ArrowRight, Navigation } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
+import PhotoSlider from "@/components/PhotoSlider";
 import { Reveal } from "@/components/Reveal";
 import { LuxuryCta } from "@/components/PremiumSections";
 import { DESTINATIONS } from "@/lib/data";
@@ -25,10 +26,9 @@ export default function SightseeingPage() {
           {DESTINATIONS.map((d, i) => (
             <Reveal key={d.name} delay={(i % 2) * 0.1}>
               <div className="card-lift group overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#111111]">
-                <div className="relative h-72 overflow-hidden">
-                  <Image src={d.image} alt={d.name} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent" />
-                  <h3 className="font-display absolute bottom-4 left-6 text-3xl drop-shadow">{d.name}</h3>
+                <div className="relative">
+                  <PhotoSlider images={[d.image]} alt={d.name} className="h-72" eager={i < 2} />
+                  <h3 className="font-display pointer-events-none absolute bottom-4 left-6 z-10 text-3xl drop-shadow">{d.name}</h3>
                 </div>
                 <div className="p-6">
                   <p className="text-sm leading-relaxed text-[#BDBDBD]">{d.desc}</p>

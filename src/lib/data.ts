@@ -1,3 +1,8 @@
+import { VEHICLE_PHOTOS, type GalleryItem } from "./gallery-vehicles";
+
+export { VEHICLE_PHOTOS };
+export type { GalleryItem };
+
 export const WHATSAPP_NUMBER = "918427822232";
 
 export const BUSINESS = {
@@ -66,21 +71,21 @@ export type Service = {
   slug: string;
   title: string;
   desc: string;
-  image: string;
+  images: string[]; // own photos per service — slide in order
   icon: string;
 };
 
 export const SERVICES: Service[] = [
-  { slug: "airport-pickup", title: "Airport Pickup", desc: "Flight-tracked meet & greet at Amritsar Airport with zero waiting stress.", image: IMG.airplane, icon: "Plane" },
-  { slug: "airport-drop", title: "Airport Drop", desc: "On-time guaranteed drops with route optimisation and buffer planning.", image: IMG.airplane, icon: "PlaneTakeoff" },
-  { slug: "local-taxi", title: "Local Amritsar Taxi", desc: "4 / 8 / 12-hour city packages with verified chauffeurs.", image: IMG.sedanRoad, icon: "MapPin" },
-  { slug: "golden-temple", title: "Golden Temple Visit", desc: "Dawn Palki Sahib to night Palki darshan — serene, unhurried transfers.", image: "/places/golden-temple.jpg", icon: "Sparkles" },
-  { slug: "wagah-border", title: "Wagah Border Tour", desc: "Reserved-time departure so you never miss the retreat ceremony.", image: "/places/wagah.jpg", icon: "Flag" },
-  { slug: "heritage-tour", title: "Punjab Heritage Tour", desc: "Gobindgarh Fort, Partition Museum, Sadda Pind in one royal circuit.", image: "/places/gobindgarh.jpg", icon: "Landmark" },
-  { slug: "outstation", title: "Outstation Taxi", desc: "Chandigarh, Delhi, Dharamshala, Katra — one-way & round-trip experts.", image: IMG.highway, icon: "Route" },
-  { slug: "corporate", title: "Corporate Cab", desc: "Monthly billing, GST invoices, priority dispatch for business travel.", image: IMG.interior, icon: "Briefcase" },
-  { slug: "wedding", title: "Wedding Car Rental", desc: "Mercedes, BMW & decorated Fortuner fleet for baraats and bridal entries.", image: IMG.wedding, icon: "Heart" },
-  { slug: "group-tour", title: "Group Tour", desc: "12 & 17-seater Tempo Travellers with pushback seats and music.", image: IMG.bus, icon: "Users" },
+  { slug: "airport-pickup", title: "Airport Pickup", desc: "Flight-tracked meet & greet at Amritsar Airport with zero waiting stress.", images: ["/fleet/dzire-1.jpg", "/fleet/amaze-1.jpg", "/fleet/etios-1.jpg", "/fleet/dzire-2.jpg"], icon: "Plane" },
+  { slug: "airport-drop", title: "Airport Drop", desc: "On-time guaranteed drops with route optimisation and buffer planning.", images: ["/fleet/amaze-2.jpg", "/fleet/dzire-3.jpg", "/fleet/dzire-4.jpg"], icon: "PlaneTakeoff" },
+  { slug: "local-taxi", title: "Local Amritsar Taxi", desc: "4 / 8 / 12-hour city packages with verified chauffeurs.", images: ["/fleet/customer-ertiga.jpg", "/fleet/innova-1.jpg", "/fleet/ertiga-1.jpg"], icon: "MapPin" },
+  { slug: "golden-temple", title: "Golden Temple Visit", desc: "Dawn Palki Sahib to night Palki darshan — serene, unhurried transfers.", images: ["/places/golden-temple.jpg", "/places/golden-night.jpg"], icon: "Sparkles" },
+  { slug: "wagah-border", title: "Wagah Border Tour", desc: "Reserved-time departure so you never miss the retreat ceremony.", images: ["/places/wagah.jpg"], icon: "Flag" },
+  { slug: "heritage-tour", title: "Punjab Heritage Tour", desc: "Gobindgarh Fort, Partition Museum, Sadda Pind in one royal circuit.", images: ["/places/gobindgarh.jpg", "/places/partition.jpg", "/places/durgiana.jpg"], icon: "Landmark" },
+  { slug: "outstation", title: "Outstation Taxi", desc: "Chandigarh, Delhi, Dharamshala, Katra — one-way & round-trip experts.", images: ["/fleet/innova-5.jpg", "/fleet/innova-11.jpg", "/fleet/innova-4.jpg"], icon: "Route" },
+  { slug: "corporate", title: "Corporate Cab", desc: "Monthly billing, GST invoices, priority dispatch for business travel.", images: ["/gallery/fleet-sedan-black.jpg", "/fleet/innova-8.jpg", "/fleet/etios-1.jpg"], icon: "Briefcase" },
+  { slug: "wedding", title: "Wedding Car Rental", desc: "Flower-decorated cars plus Mercedes & BMW for baraats and bridal entries.", images: ["/gallery/wedding-decor.jpg", "/fleet/innova-6.jpg"], icon: "Heart" },
+  { slug: "group-tour", title: "Group Tour", desc: "12 & 17-seater Tempo Travellers with pushback seats and music.", images: ["/fleet/tempo17-2.jpg", "/fleet/tempo12-1.jpg", "/gallery/tourist-coach.jpg"], icon: "Users" },
 ];
 
 export type Destination = {
@@ -121,19 +126,9 @@ export const FAQS = [
   { q: "What is your cancellation policy?", a: "Free cancellation up to 6 hours before pickup for local trips and 12 hours for outstation. No advance needed for most bookings — pay after the trip." },
 ];
 
-export const GALLERY = [
-  { src: "/fleet/customer-ertiga.jpg", cat: "Our Fleet", label: "Our New Ertiga" },
-  { src: "/gallery/tourist-coach.jpg", cat: "Group Tours", label: "Tourist Coach" },
-  { src: "/gallery/wedding-decor.jpg", cat: "Weddings", label: "Wedding Decor Car" },
-  { src: "/gallery/sedan-duty-1.jpg", cat: "Our Fleet", label: "Sedan on Duty" },
-  { src: "/gallery/sedan-duty-2.jpg", cat: "Our Fleet", label: "Sedan on Duty" },
-  { src: "/gallery/fleet-van.jpg", cat: "Our Fleet", label: "Family Van" },
-  { src: "/gallery/fleet-suv-1.jpg", cat: "Our Fleet", label: "SUV on Duty" },
-  { src: "/gallery/fleet-suv-2.jpg", cat: "Our Fleet", label: "SUV on Duty" },
-  { src: "/gallery/fleet-hatch.jpg", cat: "Our Fleet", label: "Compact on Duty" },
-  { src: "/gallery/fleet-sedan-black.jpg", cat: "Our Fleet", label: "Premium Sedan" },
-  { src: "/gallery/fleet-sedan-1.jpg", cat: "Our Fleet", label: "Sedan on Duty" },
-  { src: "/gallery/fleet-cabin.jpg", cat: "Our Fleet", label: "Comfort Cabin" },
+export const GALLERY: GalleryItem[] = [
+  { src: "/fleet/customer-ertiga.jpg", cat: "Our Fleet", label: "Our New Ertiga", w: 1600, h: 1200 },
+  ...VEHICLE_PHOTOS,
   { src: IMG.heroSUV, cat: "Luxury Cars", label: "Fortuner Night Patrol" },
   { src: IMG.rollsRoyce, cat: "Luxury Cars", label: "Rolls Royce Class" },
   { src: IMG.mercedes, cat: "Luxury Cars", label: "Mercedes E-Class" },

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { Plane, PlaneTakeoff, MapPin, Sparkles, Flag, Landmark, Route, Briefcase, Heart, Users, ArrowRight } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
+import PhotoSlider from "@/components/PhotoSlider";
 import { Reveal } from "@/components/Reveal";
 import { LuxuryCta } from "@/components/PremiumSections";
 import { SERVICES } from "@/lib/data";
@@ -32,9 +32,9 @@ export default function ServicesPage() {
         {SERVICES.map((s, i) => (
           <Reveal key={s.slug}>
             <div className={`card-lift grid overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#111111] md:grid-cols-2 ${i % 2 ? "md:[&>*:first-child]:order-2" : ""}`}>
-              <div className="relative h-72 md:h-96">
-                <Image src={s.image} alt={s.title} fill className="object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent md:bg-gradient-to-r md:from-transparent md:to-[#111111]" />
+              <div className="relative min-h-72 md:min-h-[420px]">
+                <PhotoSlider images={s.images} alt={s.title} className="absolute inset-0" eager={i < 2} />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 to-transparent md:bg-gradient-to-r md:from-transparent md:to-[#111111]/40" />
               </div>
               <div className="flex flex-col justify-center p-8 md:p-12">
                 <span className="inline-flex w-fit items-center gap-2 rounded-full bg-[#d4af37]/15 px-4 py-2 text-[11px] uppercase tracking-[0.3em] text-[#f3dd8f]">

@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import BookingWidget from "@/components/BookingWidget";
 import FleetCard from "@/components/FleetCard";
+import PhotoSlider from "@/components/PhotoSlider";
 import SectionHeading from "@/components/SectionHeading";
 import CountUp from "@/components/CountUp";
 import { Reveal, SplitHeading } from "@/components/Reveal";
@@ -100,9 +101,9 @@ export default function HomePage() {
       <section className="mx-auto max-w-7xl px-5 pt-14 md:px-8">
         <Reveal>
           <div className="card-lift grid overflow-hidden rounded-[2rem] border border-[#d4af37]/40 bg-gradient-to-br from-[#171204] via-[#0d0d0d] to-black md:grid-cols-2">
-            <div className="relative h-72 md:h-[420px]">
-              <Image src="/fleet/customer-ertiga.jpg" alt="MSL's new Maruti Ertiga" fill className="object-cover" priority />
-              <span className="absolute left-5 top-5 rounded-full bg-gradient-to-r from-[#f3dd8f] to-[#d4af37] px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.25em] text-black">
+            <div className="relative min-h-72 md:min-h-[420px]">
+              <PhotoSlider images={["/fleet/customer-ertiga.jpg"]} alt="MSL's new Maruti Ertiga" className="absolute inset-0" eager />
+              <span className="absolute left-5 top-5 z-10 rounded-full bg-gradient-to-r from-[#f3dd8f] to-[#d4af37] px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.25em] text-black">
                 New Arrival
               </span>
             </div>

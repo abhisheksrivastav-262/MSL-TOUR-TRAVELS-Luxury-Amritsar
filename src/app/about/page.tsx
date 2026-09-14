@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ShieldCheck, Sparkles, Eye, HeartHandshake, Clock3, Star, MapPin, ArrowRight } from "lucide-react";
+import { ShieldCheck, Sparkles, Eye, HeartHandshake, Clock3, Star, MapPin, ArrowRight, Phone, BadgeCheck } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
 import CountUp from "@/components/CountUp";
 import { LuxuryCta } from "@/components/PremiumSections";
-import { IMG } from "@/lib/data";
+import { IMG, BUSINESS } from "@/lib/data";
+import { quickWhatsApp } from "@/lib/whatsapp";
 
 export const metadata: Metadata = {
   title: "About Us | MSL TOUR AND TRAVELS — Luxury Cab Amritsar",
@@ -36,6 +37,45 @@ export default function AboutPage() {
             </h1>
           </Reveal>
         </div>
+      </section>
+
+      {/* FOUNDER */}
+      <section className="mx-auto max-w-7xl px-5 pb-4 md:px-8">
+        <Reveal>
+          <div className="grid overflow-hidden rounded-[2rem] border border-[#d4af37]/40 bg-gradient-to-br from-[#171204] via-[#0d0d0d] to-black md:grid-cols-[380px_1fr]">
+            <div className="relative min-h-[420px] bg-black">
+              <Image src="/team/chauffeur.jpg" alt="Founder — MSL Tour and Travels" fill className="object-contain" priority />
+              <span className="absolute left-5 top-5 rounded-full bg-gradient-to-r from-[#f3dd8f] to-[#d4af37] px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.25em] text-black">
+                Founder
+              </span>
+            </div>
+            <div className="flex flex-col justify-center p-8 md:p-12">
+              <p className="text-[11px] uppercase tracking-[0.45em] text-[#d4af37]">Meet the founder</p>
+              <h2 className="font-display mt-3 text-3xl md:text-5xl leading-tight">
+                The Man Behind <span className="gold-text">MSL Tour and Travels</span>
+              </h2>
+              <p className="mt-4 leading-relaxed text-[#BDBDBD]">
+                Sultanwind, Amritsar se — khud steering par baithkar company khadi ki. Aaj MSL ke paas
+                sedans, Ertiga, Innova Crysta, Tempo Travellers aur luxury cars hain — airport transfers,
+                Golden Temple tours, Wagah Border, outstation, weddings aur corporate travel, sab 24×7.
+              </p>
+              <div className="mt-6 grid gap-3 text-sm sm:grid-cols-2">
+                <span className="flex items-center gap-2.5 rounded-xl bg-white/5 px-4 py-3"><MapPin size={16} className="shrink-0 text-[#d4af37]" /> {BUSINESS.address}</span>
+                <span className="flex items-center gap-2.5 rounded-xl bg-white/5 px-4 py-3"><Clock3 size={16} className="shrink-0 text-[#d4af37]" /> Open {BUSINESS.hours}, 365 days</span>
+                <span className="flex items-center gap-2.5 rounded-xl bg-white/5 px-4 py-3"><ShieldCheck size={16} className="shrink-0 text-[#d4af37]" /> 100% verified chauffeurs</span>
+                <span className="flex items-center gap-2.5 rounded-xl bg-white/5 px-4 py-3"><BadgeCheck size={16} className="shrink-0 text-[#d4af37]" /> GPS-tracked fleet</span>
+              </div>
+              <div className="mt-7 flex flex-wrap gap-3">
+                <a href={quickWhatsApp("Hi! I want to talk to MSL about a booking.")} target="_blank" className="gold-btn inline-flex items-center gap-2 rounded-full px-7 py-3 text-xs font-bold uppercase tracking-[0.2em]">
+                  WhatsApp Founder <ArrowRight size={14} />
+                </a>
+                <a href="tel:+918427822232" className="inline-flex items-center gap-2 rounded-full border border-[#d4af37]/50 px-7 py-3 text-xs font-bold uppercase tracking-[0.2em] text-[#f3dd8f] hover:bg-[#d4af37]/10">
+                  <Phone size={14} /> {BUSINESS.phoneDisplay}
+                </a>
+              </div>
+            </div>
+          </div>
+        </Reveal>
       </section>
 
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8">
@@ -77,34 +117,6 @@ export default function AboutPage() {
                 <div className="relative h-48 overflow-hidden rounded-3xl border border-white/10">
                   <Image src={IMG.driver} alt="Chauffeur" fill className="object-cover" />
                 </div>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="bg-[#080808] py-16">
-        <div className="mx-auto max-w-7xl px-5 md:px-8">
-          <SectionHeading eyebrow="The face behind the wheel" title="Your Captain, On Every Trip" desc="Verified, trained and hospitality-obsessed — the man who makes 4 AM airport pickups feel effortless." />
-          <Reveal>
-            <div className="card-lift mx-auto grid max-w-4xl overflow-hidden rounded-[2rem] border border-[#d4af37]/30 bg-[#111111] md:grid-cols-[320px_1fr]">
-              <div className="relative h-80 md:h-auto">
-                <Image src="/team/chauffeur.jpg" alt="MSL verified chauffeur" fill className="object-cover object-top" />
-              </div>
-              <div className="flex flex-col justify-center p-8 md:p-10">
-                <div className="flex items-center gap-2 text-[#d4af37]">
-                  <ShieldCheck size={18} />
-                  <span className="text-[11px] font-bold uppercase tracking-[0.3em]">100% Police-Verified</span>
-                </div>
-                <h3 className="font-display mt-3 text-3xl">Lead Chauffeur — MSL Tour and Travels</h3>
-                <p className="mt-3 leading-relaxed text-[#BDBDBD]">
-                  Sultanwind&apos;s own — knows every gurdwara gate, shortcut and dhaba on the
-                  Amritsar circuit. Hindi, Punjabi and English speaking, GPS-tracked on every trip,
-                  and rated 4.9★ by thousands of happy guests.
-                </p>
-                <Link href="/book" className="gold-btn mt-6 inline-flex w-fit items-center gap-2 rounded-full px-7 py-3 text-xs font-bold uppercase tracking-[0.2em]">
-                  Ride With Us <ArrowRight size={14} />
-                </Link>
               </div>
             </div>
           </Reveal>
